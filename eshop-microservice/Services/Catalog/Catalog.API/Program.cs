@@ -1,4 +1,5 @@
 using Marten;
+using Weasel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,8 @@ builder.Services.AddCarter();
 builder.Services.AddMediatR(config => { config.RegisterServicesFromAssembly(typeof(Program).Assembly); });
 
 builder.Services.AddMarten(opt => {
-    builder.Configuration.GetConnectionString("Database");
+    opt.Connection(builder.Configuration.GetConnectionString("Database")!);
+    opt.AutoCreateSchemaObjects = AutoCreate.CreateOrUpdate;
 }).UseLightweightSessions();
 
 var app = builder.Build();

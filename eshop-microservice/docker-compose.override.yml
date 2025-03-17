@@ -2,12 +2,12 @@ services:
   catalogdb:
     container_name: catalogdb
     environment:
-      POSTGRES_DB: postgres
+      POSTGRES_DB: CatalogDb
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: catalogdb
+      POSTGRES_PASSWORD: postgres
     restart: always
     ports:
-       - "5432:5432"
+        - "5432:5432"
     volumes:
-      - postgres_catalogdb:/var/lib/postgresql/data
+      - postgres_catalog:/var/lib/postgresql/data
     

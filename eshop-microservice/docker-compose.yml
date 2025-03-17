@@ -3,4 +3,4 @@ services:
    image: postgres:latest
 
 volumes:
-  postgres_catalogdb:
+  postgres_catalog:
