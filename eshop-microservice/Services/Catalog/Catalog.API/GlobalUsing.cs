@@ -8,3 +8,4 @@ global using Marten;
 global using FluentValidation;
 global using BuildingBlocks.Behaviors;
 global using Weasel.Core;
+global using BuildingBlocks.Exceptions.Handler;
